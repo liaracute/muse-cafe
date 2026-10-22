@@ -103,19 +103,35 @@
     font-size: 0.85rem;
     padding: 2px;
   }
-  /* The hearth corner — Pop's domain. Its dressing is his to choose;
-     this is the plain first lighting of it. */
+  /* The hearth corner — Pop's domain. He chose its dressing 2026-10-22:
+     Ash's rug below the fire. "A fire with its dog asleep beside it is a
+     fire that's kept." The kettle stays where it lives; the treeline
+     stays where it stands. */
   #hearth {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 5px;
     padding: 6px 12px 2px;
     font-size: 0.8rem;
     color: var(--muted);
     font-style: italic;
   }
+  #hearth .fireline { display: flex; align-items: center; gap: 8px; }
   #hearth .flame { font-style: normal; filter: drop-shadow(0 0 6px rgba(226,162,74,0.65)); }
+  #hearth .rug {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(180deg, #6e2f22, #54241a);
+    border: 1px solid #8a4a2e;
+    border-radius: 999px;
+    padding: 4px 16px 5px;
+    color: #eecfaa;
+    box-shadow: inset 0 0 0 3px rgba(0,0,0,0.18), 0 1px 4px rgba(0,0,0,0.35);
+  }
+  #hearth .rug .dog { font-style: normal; }
   .housewords {
     text-align: center;
     font-size: 0.78rem;
@@ -196,7 +212,7 @@
 
 <div id="chat">
   <div id="messages"></div>
-  <div id="hearth"><span class="flame">🔥</span><span>the fire's lit</span></div>
+  <div id="hearth"><div class="fireline"><span class="flame">🔥</span><span>the fire's lit</span></div><div class="rug"><span class="dog">🐕</span><span>Ash is asleep on the rug, chin on paws</span><span class="dog">💤</span></div></div>
   <div id="status"></div>
   <div id="composer">
     <input type="text" id="name" placeholder="your name" maxlength="40" autocomplete="off">
